@@ -10,55 +10,63 @@
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
     </style>
 </head>
-
 <body>
     <main class="container">
         <section class="ui">
-            <div class="container-esquerda">
-                <div class="card">
-                    <div class="interno">
-                        <img class="aproximacao" src="src/icons/nfc-w30-h45.svg" alt="aproximacao">
-                        <div class="card-number">
-                            <div class="number-v1">4002 8922 0000 4321</div>
+                <div class="container-esquerda">
+                    <div class="card">
+                        <div class="interno">
+                            <img class="aproximacao" src="src/icons/nfc-w30-h45.svg" alt="aproximacao">
+                            <div class="card-number">
+                                <div class="number-v1">4002 8922 0000 4321</div>
+                            </div>
+                            <img class="chip" src="src/icons/chip-w45-h36.svg" alt="chip">
+                            <img class="bandeira" src="src/icons/visa-w62-h20.svg" alt="bandeira">
                         </div>
-                        <img class="chip" src="src/icons/chip-w45-h36.svg" alt="chip">
-                        <img class="bandeira" src="src/icons/visa-w62-h20.svg" alt="bandeira">
+                    </div>
+                    <div class="retorno-negativo-busca">
+                        <img class="aviso-icone" src="src/icons/aviso-w48-h44.svg" alt="aviso">
+                        <div class="aviso-interno">Seu cartão consta como clonado!<br>Contate seu banco imediatamente.</div>
                     </div>
                 </div>
-                <div class="retorno-busca">
-                    <img class="aviso-icone" src="src/icons/aviso-w48-h44.svg" alt="aviso">
-                    <div class="aviso-interno">Seu cartão consta como clonado!<br>Contate seu banco imediatamente.</div>
-                </div>
-            </div>
-            <div class="container-direita">
-                <form id="credit-card">
-                    <div class="number-container">
-                        <label>Número do cartão</label>
-                        <input type="text" name="card-number" id="card-number" maxlength="19"
-                            placeholder="4002 - 8922 - 0000 - 4321" required>
-                    </div>
-                    <div clas="name-container">
-                        <label>Nome impresso</label>
-                        <input type="text" name="name-text" id="name-text" maxlength="30" placeholder="Ex: Julio Cesar"
-                            required>
-                    </div>
-                    <div class="infos-container">
-                        <div class="expiration-container">
-                            <label>Validade</label>
-                            <input type="text" name="valid-thru-text" id="valid-thru-text" maxlength="5"
-                                placeholder="03/23" required>
+                <div class="container-direita">
+                    <form id="credit-card">
+                        <div class="number-container">
+                            <label>Número do cartão</label>
+                            <input type="text" name="card-number" id="card-number" maxlength="19"
+                                placeholder="4002 - 8922 - 0000 - 4321" required>
                         </div>
-                        <div class="cvv-container">
-                            <label>CVV</label>
-                            <input type="text" name="cvv-text" id="cvv-text" maxlength="4" placeholder="123" required>
+                        <div clas="name-container">
+                            <label>Nome impresso</label>
+                            <input type="text" name="name-text" id="name-text" maxlength="30" placeholder="Ex: Julio Cesar"
+                                required>
                         </div>
-                        <div><input type="checkbox" id="salvar-card" name="salvar-card" value="Salvar cartão."/></div>
-                    </div>
-                    <input type="submit" value="Fazer Consulta" id="add">
-                </form>
-            </div>
-
+                        <div clas="email-container">
+                            <label>E-mail</label>
+                            <input type="email" name="email-text" id="email-text" maxlength="30" placeholder="e-mail"
+                                required>
+                        </div>
+                        <div class="infos-container">
+                            <div class="expiration-container">
+                                <label>Validade</label>
+                                <input type="text" name="valid-thru-text" id="valid-thru-text" maxlength="5"
+                                    placeholder="03/23" required>
+                            </div>
+                            <div class="cvv-container">
+                                <label>CVV</label>
+                                <input type="text" name="cvv-text" id="cvv-text" maxlength="4" placeholder="123" required>
+                            </div>
+    
+                        </div>
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="salvar-card" name="salvar-card" value="Salvar cartão." />
+                            <label for="salvar-card">Salvar esse cartão para futuras consultas.</label>
+                        </div>
+                        <input type="submit" value="Fazer Consulta" id="add">
+                    </form>
         </section>
+        <spam>Aviso: Esta página é somente para fins educacionais. Nenhum dado bancário real é coletado ou armazenado.
+        </spam>
     </main>
     <script src="index.js"></script>
 </body>

@@ -64,8 +64,8 @@ body {
 }
 
 .card-number {
-    font-size: 1.1rem;
-    font-weight: 300;
+    font-size: 1.2rem;
+    font-weight: 400;
     color: #ffffff;
     display: flex;
     margin-top: 108px;
@@ -79,7 +79,7 @@ body {
     margin-top: -62px;
 }
 
-.retorno-busca {
+.retorno-negativo-busca {
     width: 600px;
     height: 90px;
     margin-top: 30px;
@@ -87,9 +87,9 @@ body {
     border-radius: 20px;
     display: flex;
     align-items: center;
-    flex-direction: center;
     justify-content: center;
-    gap: 50px;
+    text-align: center;
+    gap: 16px;
     font-size: 1.2rem;
     font-weight: 600;
     color: #ffffff;
@@ -98,7 +98,6 @@ body {
 .aviso-icone {
     height: 52px;
     display: flex;
-    flex-direction: start;
 }
 
 .card-holder {
@@ -124,27 +123,35 @@ body {
     color: #ffffff;
 }
 
-.number-container, .name-container {
+.number-container, .name-container, .email-container {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     color: #ffffff;
 }
 
-.expiration-container, .cvv-container {
-    width: 50%;
+.expiration-container {
+    width: 70%;
+}
+
+.cvv-container {
+    width: 24%;
 }
 
 input {
-    border: 0;
+    border: none;
     border-radius: 20px;
     padding: 8px;
     background-color: #1f1f1f;
     color: #ffffff;
     border: solid 1px #5e5e5e;
     font-weight: 500;
-    font-size: 1.1rem;
+    font-size: 1rem;
     outline: 0;
     width: 90%;
+}
+
+label {
+    font-size: .9rem;
 }
 
 input[type="text"]:focus {
@@ -164,6 +171,25 @@ input[type="submit"] {
 
 .infos-container {
     display: flex;
+}
+
+.checkbox-container {
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.checkbox-container input[type="checkbox"] {
+    width: auto;
+    padding: 0;
+}
+
+.tittle {
+    color: #ffffff;
+    display: flex;
+    align-self: start;
 }
 
 @media (max-width: 1024px) {
