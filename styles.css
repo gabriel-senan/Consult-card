@@ -35,7 +35,7 @@ body {
     gap: 3.2em;
 }
 
-.tittle-principal {
+.title-principal {
     display: flex;
     justify-content: center;
     color: #ffffff;
@@ -95,7 +95,6 @@ body {
 }
 
 .retorno-negativo-busca {
-    overflow: hidden;
     width: 100%;
     height: 90px;
     margin-top: 30px;
@@ -112,11 +111,12 @@ body {
 }
 
 .retorno-positivo-busca {
-    background-color: #3FB96C;
     width: 100%;
     height: 90px;
+    margin-top: 30px;
+    background-color: #3FB96C;
     border-radius: 20px;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     text-align: center;
