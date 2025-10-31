@@ -1,274 +1,263 @@
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
+/* Estilos principais - melhorados para visual e responsividade */
+:root{
+    --bg: #1b1b1b;
+    --panel: #151515;
+    --card-bg: #333333;
+    --muted: #5e5e5e;
+    --accent: #064CF0;
+    --danger: #FF7777;
+    --success: #3FB96C;
+    --radius: 20px;
+    --gap: 1.6rem;
 }
 
-body {
+*{ box-sizing: border-box; margin:0; padding:0; font-family: 'Poppins', sans-serif }
+
+body{
+    min-height:100vh;
+    background: linear-gradient(180deg,#0f0f0f 0%, #121212 60%);
+    color:#fff;
+}
+
+.container{
+    width:100%;
+    max-width:1200px;
+    margin:2.5rem auto;
+    padding:0 1rem;
+}
+
+.ui{
+    background: var(--bg);
+    padding:2.2rem;
+    border-radius: var(--radius);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    display:flex;
+    flex-direction:column;
+    gap:2rem;
+}
+
+.title-principal{ text-align:center; font-weight:700; font-size:clamp(28px,4vw,50px); color:#fff }
+
+.home-total{ display:flex; gap:var(--gap); align-items:flex-start }
+
+.container-esquerda{ width:50%; position:relative }
+.container-direita{ width:50%; display:flex; align-items:center }
+
+/* Cartão visual */
+.card{
+    width:100%;
+    height:320px;
+    border-radius:var(--radius);
+    background: linear-gradient(180deg,var(--card-bg), #2f2f2f);
+    padding:1.25rem;
+    position:relative;
+    overflow:hidden;
+}
+
+.interno{
+    padding:1rem;
+    position: relative; /* permite posicionamento absoluto dos ícones dentro do cartão */
     height: 100%;
-    background-color: #F1F1F1;
+}
+.aproximacao{
+    width:32px;
+    position: absolute;
+    top: 50%;
+    left: 1.25rem;
+    transform: translateY(-50%);
+}
+.chip{
+    height:34px;
+    position: absolute;
+    top: 50%;
+    left: 5rem;
+    transform: translateY(-50%);
 }
 
-.container {
-    width: 100%;
-    height: 100%;
-    margin: 3% auto;
-}
-
-.ui {
-    display: flex;
-    flex-direction: column;
-    border: 0;
-    box-shadow: 0 0 10px rgba(149, 184, 209, .5);
-    border-radius: 10px;
-    width: 60%;
-    margin: 0 auto;
-    padding: 2%;
-    display: flex;
-    gap: 100px;
-    background-color: #1F1F1F;
-}
-
-.home-total {
-    display: flex;
-    flex-direction: row;
-    gap: 3.2em;
-}
-
-.title-principal {
-    display: flex;
-    justify-content: center;
-    color: #ffffff;
-    font-size: 50px;
-    font-weight: 600;
-}
-
-.container-esquerda {
-    width: 50%;
-}
-
-.container-direita {
-    width: 50%;
-    display: flex;
-    align-items: center;
-}
-
-.card {
-    width: 100%;
-    height: 320px;
-    background-color: #333333;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
-}
-
-.interno {
-    padding: 20px;
-}
-
-.aproximacao {
-    width: 32px;
-    margin-top: 100px;
-}
-
-.chip {
-    height: 34px;
-    display: flex;
-    position: relative;
-    left: 10%;
-    bottom: 186px;
-}
-
-.card-number {
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: #ffffff;
-    display: flex;
-    margin-top: 108px;
-}
-
-.bandeira {
-    height: 20px;
-    position: relative;
-    display: flex;
-    left: 86%;
-    margin-top: -62px;
-}
-
-.retorno-negativo-busca {
-    width: 100%;
-    height: 90px;
-    margin-top: 30px;
-    background-color: #FF7777;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 16px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #ffffff;
-}
-
-.retorno-positivo-busca {
-    width: 100%;
-    height: 90px;
-    margin-top: 30px;
-    background-color: #3FB96C;
-    border-radius: 20px;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 16px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #ffffff;
-}
-
-.aviso-icone {
-    height: 52px;
-    display: flex;
-}
-
-.card-holder {
-    color: #ffffff;
-}
-
-.card label {
-    font-size: .5rem;
-}
-
-.card-infos {
-    display: flex;
-    width: 40%;
-    justify-content: space-between;
-    color: #ffffff;
-}
-
-#credit-card {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    font-size: 1.1rem;
-    color: #ffffff;
-}
-
-.number-container,
-.name-container,
-.cpf-container {
-    display: flex;
-    flex-direction: column;
-    color: #ffffff;
-}
-
-.expiration-container {
-    width: 70%;
-}
-
-.cvv-container {
-    width: 24%;
-}
-
-input {
-    border: none;
-    border-radius: 20px;
-    padding: 8px;
-    background-color: #1f1f1f;
-    color: #ffffff;
-    border: solid 1px #5e5e5e;
+.card-number{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 1.25rem; /* posicionado um pouco acima da borda inferior */
+    font-size: 1.05rem;
     font-weight: 500;
-    font-size: 1rem;
-    outline: 0;
-    width: 90%;
+    color: #fff;
+    letter-spacing: 2px;
+    text-align: center;
+    width: calc(100% - 3rem);
 }
 
-label {
-    font-size: .9rem;
+.bandeira{
+    width:62px;
+    height:20px;
+    object-fit:contain;
+    position: absolute;
+    right: 1.25rem;
+    top: 1.25rem;
+    transition: transform .18s ease, opacity .18s ease;
 }
 
-input[type="text"]:focus {
-    border: 1px solid #95b8d1;
+.bandeira-troca {
+    animation: trocaBandeira 0.3s ease-in-out;
 }
 
-input#valid-thru-text,
-input#cvv-text {
-    width: 80%;
+@keyframes trocaBandeira {
+    0% { transform: translateY(-5px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
 }
 
-input[type="submit"] {
-    width: 95%;
-    background-color: #064CF0;
-    cursor: pointer;
-    border: none;
-    padding: 10px;
-    border-radius: 20px;
-    font-size: 1.1rem;
+/* Resultado inline (abaixo do cartão) */
+.resultado-container{ width:100%; margin-top:30px }
+.resultado-negativo, .resultado-positivo{
+    width:100%;
+    border-radius:var(--radius);
+    height:auto; min-height:70px;
+    display:flex; align-items:center; gap:16px;
+    padding:0.8rem 1rem;
+    font-weight:600; color:#fff; font-size:1.05rem;
+    animation: slideIn .28s ease-out;
+}
+.resultado-negativo{ background: linear-gradient(90deg,var(--danger), #FF5555) }
+.resultado-positivo{ background: linear-gradient(90deg,var(--success), #45c06a) }
+
+.aviso-icone{ height:48px; display:flex }
+.aviso-interno{ line-height:1.4 }
+
+/* Form e inputs */
+#credit-card{ display:flex; flex-direction:column; gap:1rem; width:100% }
+label{ font-size:.95rem; color:#ddd }
+input[type='text'], input[type='tel']{
+    border-radius:20px; border:1px solid var(--muted); padding:10px 12px; background:var(--panel);
+    color:#fff; font-weight:500; font-size:1rem; width:100%; outline:0;
+}
+input::placeholder{ color:#bfbfbf }
+input:focus{ box-shadow: 0 0 0 5px rgba(9,76,240,0.06); border-color:rgba(149,184,209,0.6) }
+
+.infos-container{ display:flex; gap:10px }
+.expiration-container{ width:70% }
+.cvv-container{ width:30% }
+
+.checkbox-container{ display:flex; gap:12px; align-items:center }
+
+input[type='submit']{
+    background:var(--accent);
+    color:#fff; border:none; padding:12px; border-radius:20px; cursor:pointer; width:95%; font-weight:600;
+    transition: transform .12s ease, filter .12s ease;
+}
+input[type='submit']:hover{ filter:brightness(1.04); transform:translateY(-2px) }
+
+.disclaimer{ text-align:center; color:#bfbfbf; margin-top:1.25rem }
+
+/* Pequenos ajustes visuais */
+.card-infos{ display:flex; width:40%; justify-content:space-between }
+.card label{ font-size:.85rem }
+
+/* Responsividade */
+@media (max-width:1024px){
+    .home-total{ flex-direction:column-reverse }
+    .container-esquerda, .container-direita{ width:100% }
+    .card{ height:280px }
+    .resultado-container{ margin-top:18px }
 }
 
-.infos-container {
-    display: flex;
-    gap: 10px;
-}
-
-.checkbox-container {
-    margin: 5px;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    gap: 12px;
-}
-
-.checkbox-container input[type="checkbox"] {
-    width: auto;
-    padding: 0;
-}
-
-.tittle {
-    color: #ffffff;
-    display: flex;
-    align-self: start;
-}
-
-@media (max-width: 1024px) {
-    .ui {
-        flex-direction: column-reverse;
-        padding: 5%;
+@media (max-width:768px){
+    .ui{ padding:1rem }
+    .card{ 
+        height:220px;
+        padding: 1rem;
     }
-
-    .container-esquerda,
-    .container-direita {
-        width: 100%;
+    .interno{ 
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        position: relative;
     }
-
-    .card {
-        width: 100%;
+    /* No mobile, posiciona NFC e chip na mesma linha à esquerda, centralizados verticalmente */
+    .aproximacao{ 
+        width: 28px;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 1.25rem;
+        transform: translateY(-50%);
     }
+    .chip{ 
+        height: 30px;
+        position: absolute;
+        top: 50%;
+        left: 4.5rem;
+        margin: 0;
+        transform: translateY(-50%);
+        bottom: auto;
+    }
+    .card-number{ 
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 1rem;
+        font-size: 1.1rem;
+        text-align: center;
+        width: calc(100% - 2.5rem);
+        letter-spacing: 1.8px;
+    }
+    .bandeira{ 
+        position: absolute;
+        right: 0;
+        top: 1rem;
+        left: auto;
+        margin: 0;
+        width: 50px;
+        height: 16px;
+    }
+    input[type='submit']{ width:100% }
+    .infos-container{ flex-direction:row; gap:8px }
+}
 
-    .retorno-negativo-busca {
-        width: 100%;
+@media (max-width:420px){
+    .title-principal{ font-size:22px }
+    .card{ 
+        height: 200px;
+        padding: 0.8rem;
+    }
+    .card-number{ 
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0.9rem;
+        font-size: 1rem;
+        letter-spacing: 1.5px;
+        width: calc(100% - 2rem);
+    }
+    .chip{ 
+        height: 26px;
+        left: 4rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .aproximacao{
+        width: 24px;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
     }
 }
 
-@media (max-width: 768px) {
-    .ui {
-        padding: 3%;
-    }
+/* Animações */
+@keyframes slideIn{
+    from{ opacity:0; transform:translateY(-12px) }
+    to{ opacity:1; transform:translateY(0) }
+}
 
-    input,
-    input#valid-thru-text,
-    input#cvv-text {
-        width: 100%;
+/* Estilos para animação de entrada do resultado */
+@keyframes slideIn {
+    from { 
+        opacity: 0;
+        transform: translateY(-12px);
     }
-
-    input[type="submit"] {
-        width: 100%;
+    to { 
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-span {
-    display: flex;
-    justify-content: center;
-    color: #ffffff;
-    font-size: 15px;
-}
